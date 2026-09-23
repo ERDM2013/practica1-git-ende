@@ -1,6 +1,6 @@
 <?php
-$estado = ''; // Valores: PENDIENTE, ENVIADO, ENTREGADO, CANCELADO
-$diasDesdeEnvio = 5;
+$estado = 'PENDIENTE'; // Valores: PENDIENTE, ENVIADO, ENTREGADO, CANCELADO
+$diasDesdeEnvio = 2;
 
 $color = 'gray';
 $mensaje = 'Estado desconocido.';

@@ -1,6 +1,6 @@
 <?php 
 
-$extension = 'webp';
+$extension = 'html';
 
 $resultado = match ($extension) {
     'jpg','jpeg', 'png', 'webp' => 'icon-media',
