@@ -36,3 +36,6 @@ echo "El tipo de cliente es: " . $rolCliente . " <br>";
 echo "El precio del monto de la compra es: " . $montoCompra . " €<br>";
 echo "El precio de los portes son: " . $costoEnvio . " €<br>";
 echo "El precio final es: " . $precioFinal . " €<br>";
+
+
+?>
