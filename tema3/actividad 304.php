@@ -1,7 +1,7 @@
 <?php
 
 $pesoKg = 7.2;
-$rolCliente = 'VIP'; //valores: 'ESTANDAR', 'PREMIUM', 'VIP'
+$rolCliente = 'ESTANDAR'; //valores: 'ESTANDAR', 'PREMIUM', 'VIP'
 $montoCompra = 80.00;
 $costoEnvio = 0;
 $precioFinal = 0;
