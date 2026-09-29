@@ -6,5 +6,11 @@ almacenando el resultado en un array asociativo ['M' => 44, 'F' => 66] sin utili
  Finalmente, muestra el resultado por pantalla. 
  */
 
+
+
+
+
+ 
+
 ?>
 
