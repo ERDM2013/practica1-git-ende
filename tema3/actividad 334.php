@@ -12,16 +12,18 @@
     y añade una fila final con el importe total de la compra. 
 */
 
-$nombreProducto = $_POST['nombre'];
-$cantidadProducto = $_POST['nombre'];
-$costeProducto = $_POST['coste'];
 
 $productos = [];
 $cantidad = [];
 $coste = [];
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    if(empty($_POST['nombre'])){
-        $nombreProducto = "El nombre es requerido."
+    $nombreProducto = $_POST['nombre'] ?? '';
+    $cantidadProducto = $_POST['cantidad'] ?? '';
+    $costeProducto = $_POST['coste'] ?? '';
+
+
+    if(producto){
+        
     }
 }
