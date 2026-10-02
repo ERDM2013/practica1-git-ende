@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Ejemplo 2: controles del formulario</title>
+
+</head>
+
+<body>
+
+  <form action="ejemplo2.php" method="post">
+
+        <label>Nombre: <input type="text" name="nombre"></label>
+
+        <fieldset>
+
+          <legend>Turno</legend>
+
+          <label><input type="radio" name="turno" value="manana"> Mañana</label>
+
+          <label><input type="radio" name="turno" value="tarde"> Tarde</label>
+
+        </fieldset>
+
+        <label><input type="checkbox" name="acepto"> Acepto las condiciones</label>
+
+        <label><input type="checkbox" name="boletin"> Quiero recibir novedades</label>
+
+        <fieldset>
+
+          <legend>Lenguajes</legend>
+
+          <label><input type="checkbox" name="lenguajes[]" value="php"> PHP</label>
+
+          <label><input type="checkbox" name="lenguajes[]" value="sql"> SQL</label>
+
+          <label><input type="checkbox" name="lenguajes[]" value="py"> Python</label>
+
+        </fieldset>
+
+        <label>Curso:
+
+          <select name="curso">
+
+            <option value="dam">DAM</option>
+
+            <option value="daw">DAW</option>
+
+          </select>
+
+        </label>
+
+        <label>Comentario: <textarea name="comentario"></textarea></label>
+
+        <button type="submit">Enviar</button>
+
+  </form>
+
+</body>
+</html>

@@ -12,18 +12,19 @@
     y añade una fila final con el importe total de la compra. 
 */
 
+// Lo primero es crear las varibles a partir de los arrays recogidos en el html
 
-$productos = [];
-$cantidad = [];
-$coste = [];
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $nombreProducto = $_POST['nombre'] ?? '';
-    $cantidadProducto = $_POST['cantidad'] ?? '';
-    $costeProducto = $_POST['coste'] ?? '';
+        echo "<p>Esta página procesa un formulario. Rellénalo en <a href=\"ejemplo2.html\">ejemplo2.html</a>.</p>\n";
 
+        exit;
 
-    if(producto){
-        
-    }
 }
+
+
+$nombres = $_POST['nombre'];
+$cantidades = $_POST['cantidad'];
+$costes = $_POST['coste'];
+
+echo "<h1>".$nombres."</h1>";

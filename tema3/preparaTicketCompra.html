@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Ticket Compra</title>
+</head>
+<body>
+
+    <h1>Tikect de compra</h1>
+
+    <form action="imprimeTicketCompar.php" method="post">
+        <!-- Producto 1 -->
+        <h3>Producto 1</h3>
+        <label for="nombre"></label>
+            <input type="text" id="nombre[]" name="nombre"/>
+        <label for="cantidad"></label>
+            <input type="number" id="cantidad[]" name="cantidad"/>
+        <label for="coste"></label>
+            <input type="number" id="coste[]" name="coste"/>
+        
+     
+        <!-- Boton de enviar -->
+        <input type="submit" id="enviar" name="enviar">
+    </form>
+   
+</body>
+</html>
