@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Ejercicio 337</title>
+
+</head>
+
+<body>
+
+  <form action="Act336ConsultaNotas.php" method="post">
+
+        <label>Codigo de producto: <input type="text" name="codigo"></label>
+        <label>Unidades: <input type="number" name="unidades"></label>
+
+        <button type="submit">Enviar</button>
+        <table>
+                <thead>
+                    <tr>
+                        <td> NOMBRE </td>
+                        <td> PRECIO </td>
+                        <td> TOTAL SIN IVA </td>
+                        <td> TOTAL </td>
+                    </tr>
+                <thead>
+                <tbody>
+                    <tr><? $producto ?></tr>
+                    <tr><? $precio ?></tr>
+                    <tr><? $totalSinIva ?></tr>
+                    <tr><? $total ?></tr>
+
+  </form>
+
+</body>
+
+</html>
