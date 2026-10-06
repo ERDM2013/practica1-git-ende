@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 $codigoUsuario = trim($_POST['codigo']) ?? '';
 
-$inidades = trim($_POST['unidades']) >= 1 ?? '';
+$unidades = trim($_POST['unidades']) ?? '';
 
 $encontrado=false;
 foreach($productos as $codigo => $prod){

@@ -14,17 +14,33 @@
 
 // Lo primero es crear las varibles a partir de los arrays recogidos en el html
 
+
+
+
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
-        echo "<p>Esta página procesa un formulario. Rellénalo en <a href=\"ejemplo2.html\">ejemplo2.html</a>.</p>\n";
+    $nombres = $_POST['nombre'] ?? [];
+    $cantidades = $_POST['cantidad'] ?? [];
+    $costes = $_POST['coste'] ?? [];
 
-        exit;
+    $error = false;
+
+    foreach($nombres as $clave=>$valor){
+        if($normes[$clave] === '' || $cantidades[$clave] === '' || $costes [$clave]){
+            error = true;
+            break;
+        }
+    }
+
+
+
+
 
 }
 
 
-$nombres = $_POST['nombre'];
-$cantidades = $_POST['cantidad'];
-$costes = $_POST['coste'];
 
-echo "<h1>".$nombres."</h1>";
+
+
+
