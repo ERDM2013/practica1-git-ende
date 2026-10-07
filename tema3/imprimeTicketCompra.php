@@ -18,29 +18,59 @@
 
 
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $nombres = $_POST['nombre'] ?? [];
     $cantidades = $_POST['cantidad'] ?? [];
     $costes = $_POST['coste'] ?? [];
 
     $error = false;
+    $totalCompra = 0;
 
-    foreach($nombres as $clave=>$valor){
-        if($normes[$clave] === '' || $cantidades[$clave] === '' || $costes [$clave]){
-            error = true;
-            break;
+    /* Validacion de datos */
+
+    if (empty($nombres) || empty($cantidades) || empty($costes)) {
+        $error = true;
+    } else {
+
+        foreach ($nombres as $i => $nombre) {
+            $cantidad = $cantidades[$i];
+            $coste = $costes[$i];
+            $subtotal = $cantidad * $coste;
+            $totalCompra += $subtotal;
         }
     }
 
-
-
-
-
-}
-
-
-
-
-
-
+    if ($error) {
+        echo "hay algun dato sin meter";
+    } else {
+?>
+        <h3> Tabla productos </h3>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <td> PRODUCTO </td>
+                            <td> CANTIDAD </td>
+                            <td> COSTE </td>
+                            <td> SUBTOTAL </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($nombres as $i => $nombre) { ?>
+                            <tr>
+                                <td><?php echo $nombre ?> </td>
+                                <td><?php echo $cantidades[$i] ?> </td>
+                                <td><?php echo $costes[$i] ?> </td>
+                                <td><?php echo $cantidades[$i] * $costes[$i] ?> </td>
+                            </tr>
+                        <?php  } ?>
+                        <tr>
+                            <td>TOTAL COMPRA </td>
+                            <td><?php echo $totalCompra ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+            <?php
+        }
+    }
+            ?>
