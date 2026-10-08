@@ -9,25 +9,44 @@
 
     <h1>Tikect de compra</h1>
 
-    <?php for ($i = 1; $i <= 3; $i++): ?>
-            <div class="producto-row">
-                <h3>Producto <?= $i ?></h3>
+    <form action="imprimeTicketCompra.php" method="post">
+            <!-- producto 1 -->
+                <h3>Producto 1</h3>
+                <label>Nombre:</label> 
+                <input type="text" name="nombre[]"><br><br>
+                
+                <label>Cantidad:</label> 
+                <input type="number" name="cantidad[]" ><br><br>
+                
+                <label>Coste :</label>
+                <input type="number" name="coste[]" ><br><br><br>
+
+                <!-- producto 2 -->
+                <h3>Producto 2</h3>
                 <label>Nombre:</label>
-                <input type="text" name="nombre[]">
+                <input type="text" name="nombre[]"><br><br>
                 
                 <label>Cantidad:</label>
-                <input type="number" name="cantidad[]" >
+                <input type="number" name="cantidad[]" ><br><br>
                 
-                <label>Coste Unitario (€):</label>
-                <input type="number" name="coste[]" >
-            </div>
-             <hr>
-        <?php endfor; ?>
+                <label>Coste :</label>
+                <input type="number" name="coste[]" ><br><br><br>
 
+                <!-- producto 3 -->
+                <h3>Producto 3</h3>
+                <label>Nombre:</label>
+                <input type="text" name="nombre[]"><br><br>
+                
+                <label>Cantidad:</label>
+                <input type="number" name="cantidad[]" ><br><br>
+                
+                <label>Coste :</label>
+                <input type="number" name="coste[]" ><br><br><br>
+            
         <button type="submit">Enviar</button>
 
-    
     </form>
+    
    
 </body>
 </html>
