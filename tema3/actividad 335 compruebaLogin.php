@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $usuarios = [
         "edurne" => "edurne",
-        "joss" => "joss",
+        "josh" => "josh",
         "javier" => "javier"
     ];
 
