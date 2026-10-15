@@ -1,5 +1,6 @@
 <?php
-
+// para que el programa coja los tipos estrictos.
+declare(strict_types=1);
 class Coche{
     public $marca;
     public $modelo;
@@ -11,22 +12,25 @@ class Coche{
         $this->velocidad = $velocidad;
     }
 
-    function acelerar ($cantidad){
-        $this -> velocidad += $cantidad;
+    function acelerar (int $cantidad){
+        $this->velocidad += $cantidad;
     }
 
-    function frenar($cantidad){
-        $this -> velocidad -= $cantidad;
+    function frenar(int $cantidad){
+        $this->velocidad -= $cantidad;
     }
 
-    function mostrarInfo() : string{
-        echo("El coche con marca: " . $this->marca . "\n modelo: " . $this->modelo . "tiene una velocidad de: " . $this->velocidad);
+    function mostrarInfo(): string{
+       return ("El coche con marca: " . $this->marca . "\nModelo: " . $this->modelo .  "\nTiene una velocidad total de: " . $this->velocidad . "\n");
     }
 }
 
-$peugeot = new Coche(Peugeot, 206, 30);
+$peugeot = new Coche("Peugeot", 206, 30);
+echo $peugeot->mostrarInfo();
 $peugeot->acelerar(30);
-$peugeot->mostrarInfo();
+echo $peugeot->mostrarInfo();
+$peugeot->frenar(20);
+echo $peugeot->mostrarInfo();
 
 
 
