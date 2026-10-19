@@ -19,12 +19,20 @@ abstract class Instrumento
 
 class Guitarra extends Instrumento
 {
+    
     protected int $cuerdas;
+
+    #[Override]
+    function __construct(string $nombre, int $cuerdas)
+    {
+       parent::__construct($nombre);
+    $this->cuerdas = $cuerdas;
+    }
 
 
     function tocar(): string
     {
-        return ("Tiene " . $this->cuerdas . " cuerdas");
+        return ("Esta " . $this->nombre . " se toca con " . $this->cuerdas . " cuerdas. \n");
     }
 }
 
@@ -32,11 +40,32 @@ class Piano extends Instrumento
 {
     protected int $teclas;
 
+    #[Override]
+    function __construct(string $nombre, int $teclas)
+    {
+        parent::__construct($nombre);
+        $this->teclas = $teclas;
+    }
+
 
     function tocar(): string
     {
-        return ("Tiene " . $this->teclas . " teclas");
+
+        return ("Esta " . $this->nombre . " se toca con " . $this->teclas . " cuerdas. \n");
     }
 }
 
-$guitarra1 = new Guitarra("guitarra", 6);
+$guitarra1 = new Guitarra("guitarra", 5);
+echo $guitarra1->tocar();
+
+$piano1 = new Piano("piano" , 10);
+echo $piano1->tocar();
+
+$instrumentos = [];
+$instrumentos[]= $guitarra1;
+$instrumentos[]= $piano1;
+
+foreach($instrumentos as $instrumento){
+    echo $instrumento-> 
+}
+
