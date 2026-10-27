@@ -18,7 +18,7 @@ class Reserva{
         return $this->cliente;
     }
 
-    public function getHabitacion():array{
+    public function getHabitacion():Habitacion{
         return $this->habitacion;
     }
 
@@ -29,7 +29,7 @@ class Reserva{
 
     public function importe():float{
 
-    $total = $this->habitacion->calcularPrecio($this->noches);
+    $total = $this->habitacion->calcularPrecio($this->noches());
     return $total;
 
     }

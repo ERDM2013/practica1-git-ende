@@ -27,6 +27,11 @@ abstract class Habitacion
 
 class HabitacionIndividual extends Habitacion
 {
+    #[Override]
+    function __construct(int $numero, float $precioNoche)
+    {
+        return parent::__construct($numero, $precioNoche);
+    }
 
     public function calcularPrecio(int $noches): float
     {
@@ -36,7 +41,7 @@ class HabitacionIndividual extends Habitacion
     #[Override]
     public function describir(): string
     {
-        return parent::describir();
+        return parent::describir() . " | Con un total de: " . $this->calcularPrecio() . " €";
     }
 }
 
@@ -55,7 +60,7 @@ class HabitacionDoble extends Habitacion
     public function calcularPrecio(int $noches): float
     {
         if($this->desayunoIncluido){
-            return ($noches * $this->precioNoche) + 12;
+            return ($noches * $this->precioNoche) + (12 * $noches);
         }else{
             return $noches * $this->precioNoche;
         }
@@ -66,7 +71,7 @@ class HabitacionDoble extends Habitacion
     public function describir(): string
     {
         if ($this->desayunoIncluido) {
-            return parent::describir() . " con desayuno incluido.";
+            return parent::describir() . " con desayuno incluido. Y un Total de: " . $this->calcularPrecio() . " €";
         } else {
             return parent::describir() . " sin desayuno incluido";
         }
@@ -87,7 +92,7 @@ class Suite extends HabitacionDoble
     public function calcularPrecio(int $noches): float
     {
          if($this->tieneJacuzzi){
-            return (parent::calcularPrecio($noches) * 1.5) + 25;
+            return (parent::calcularPrecio($noches) * 1.5) + (25*$noches);
         }else{
              return parent::calcularPrecio($noches) * 1.5;
         }
@@ -98,7 +103,7 @@ class Suite extends HabitacionDoble
     public function describir(): string
     {
         if ($this->tieneJacuzzi) {
-            return parent::describir() . " con desayuno y jacuzzi.";
+            return parent::describir() . " con desayuno y jacuzzi. Con un total de: ";
         } else {
             return parent::describir() . " sin desayuno ni jacuzzi.";
         }

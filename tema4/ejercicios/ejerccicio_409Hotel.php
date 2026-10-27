@@ -1,15 +1,16 @@
 <?php 
 include 'ejercicio_409Habitacion.php';
+include 'ejercicio_409Reserva.php';
 
 class Hotel {
     private string $nombre;
-    private array $habitaciones;
-    private array $reservas;
+    private Habitacion $habitaciones;
+    private Reserva $reservas;
 
-    public function __construct(string $nombre){
+    public function __construct(string $nombre, Habitacion $habitaciones, Reserva $reservas){
         $this->nombre = $nombre;
-        $this->habitaciones = [];
-        $this->reservas = [];
+        $this->habitaciones = $habitaciones;
+        $this->reservas = $reservas;
     }
     
     public function getNombre():string{
@@ -17,10 +18,15 @@ class Hotel {
     }
 
     public function agregarHabitacion(Habitacion $habitacion):void{
-        $this->habitaciones[] = $habitacion;
+        $this->habitaciones[]=$habitacion;
     }
 
-    public functionç reservar(string $cliente, int $numHabitacion, DateTimeImmutable $entrada, DateTimeImmutable $salida ): Reserva{
-        $this->reservas[] = $reserva;
+    public function reservar(string $cliente, int $habitacion, DateTimeImmutable $entrada, DateTimeImmutable $salida ): Reserva{
+       
+
+                
+            
+        
+       
     }
 }
