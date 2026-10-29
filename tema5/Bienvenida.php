@@ -23,6 +23,6 @@ exit;
 
 if(isset($_COOKIE['nombre'])){
     $nombre = $_COOKIE['nombre'];
-    echo 
-}
+    echo ("La cookie es: " . $nombre);
+};
 ?>
