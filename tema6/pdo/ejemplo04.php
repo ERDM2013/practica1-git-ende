@@ -18,9 +18,9 @@ $config = [
 
 $dsn = "mysql:host={$config['host']};port={$config['puerto']};"
 
-     . "dbname={$config['bd']};charset=utf8mb4";
+    . "dbname={$config['bd']};charset=utf8mb4";
 
- 
+
 
 $opciones = [
 
@@ -32,12 +32,11 @@ $opciones = [
 
 ];
 
- 
+
 
 try {
 
     $pdo = new PDO($dsn, $config['usuario'], $config['clave'], $opciones);
-
 } catch (PDOException $e) {
 
     error_log($e->getMessage());                      // detalle al log
@@ -46,7 +45,7 @@ try {
 
 }
 
- 
+
 
 // Comparación: misma consulta con una conexión SIN opciones y con opciones
 
@@ -60,18 +59,20 @@ echo "Con FETCH_ASSOC:\n";
 
 print_r($pdo->query('SELECT id, nombre FROM productos WHERE id = 1')->fetch());
 
- 
+echo "Prueba";
+
+print_r($sinOpciones->query('SELECT id, nombre, stock FROM productos WHERE categoria = "Almacenamiento"')->fetch());
+
+
 
 // ERRMODE_EXCEPTION: un fallo SQL se puede capturar con try-catch
 
 try {
 
-    print_r($pdo->query('SELECT * FROM tabla_que_no_existe')); 
+    print_r($pdo->query('SELECT * FROM tabla_que_no_existe'));
     print_r($pdo->getAttribute(PDO::ATTR_DRIVER_NAME));
     print_r($pdo->getAttribute(PDO::ATTR_SERVER_VERSION));
-
 } catch (PDOException $e) {
 
     echo 'Excepción capturada. SQLSTATE: ' . $e->getCode() . "\n";
-
 }
