@@ -22,4 +22,5 @@ try{
     }
 
     error_log($e->getMessage());
+    header("Location: 404.php");
 }
