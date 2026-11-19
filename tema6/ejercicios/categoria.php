@@ -2,13 +2,19 @@
 
 require __DIR__ . "/conexion.php";
 
-$categoria = trim($_GET['cat']) ?? "";
+$categoria = isset($_GET['cat']) ? $_GET['cat'] : "";
 
 $sql = "SELECT nombre, precio, stock FROM productos WHERE categoria = :cat ORDER BY nombre ASC";
 
 $stmt = $conexion->prepare($sql);
 $stmt->execute([':cat' => $categoria]);
 $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$sql2 = "SELECT DISTINCT categoria FROM productos";
+
+$stmt2 = $conexion->prepare($sql2);
+$stmt2->execute();
+$categorias = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -21,11 +27,16 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-    <form action="categoria.php" method="GET">
-       <input type="text" placeholder="categoria" name="cat" value="<?= htmlspecialchars($categoria) ?>">
-       <input type="submit" name="enviar"><br><br><br>
+    <form action="categoria.php" method="get">
+        <select name="cat">
+            <?php foreach ($categorias as $categoria): ?>
+                <option value="<?= htmlspecialchars($categoria['categoria']) ?>"> <?= htmlspecialchars($categoria['categoria']) ?> </option>
+            <?php endforeach; ?>
+        </select>
+        <button type="submit">Enviar</button>
     </form>
-    <?php if (count($productos)>0): ?>
+    <br><br><br>
+    <?php if (count($productos) > 0): ?>
         <table border='1'>
             <thead>
                 <tr>
