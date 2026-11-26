@@ -1,0 +1,11 @@
+{
+    "name": "edurne/segundo-proyecto",
+    "description": "Este es el segundo proyecto con Composer",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Edurne\\SegundoProyecto\\": "src/"
+        }
+    },
+    "require": {}
+}

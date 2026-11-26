@@ -1,0 +1,12 @@
+{
+    "name": "edurne/primer-proyecto",
+    "description": "Mi primer proyecto con Composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Edurne Ruiz",
+            "email": "eruizdemig@educacion.navarra.com"
+        }
+    ],
+    "require": {}
+}
