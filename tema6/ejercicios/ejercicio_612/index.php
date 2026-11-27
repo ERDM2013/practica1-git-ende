@@ -23,7 +23,6 @@ echo "
 <body>
 
 <h1>Ejercicio 612 </h1>
-<a href='611.html'>Añadir Producto</a>
 
 <h2>Mostrar todos los productos</h2>
 
